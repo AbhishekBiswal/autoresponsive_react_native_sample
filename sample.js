@@ -14,7 +14,7 @@
 'use strict';
 
 let React = require('react-native');
-let AutoResponisve = require('autoresponsive-react-native');
+let AutoResponsive = require('autoresponsive-react-native');
 
 let {
   StyleSheet,
@@ -26,7 +26,7 @@ let {
 
 let styles = StyleSheet.create({
   container: {
-    backgroundColor: '#301711',
+    backgroundColor: '#f2f2f2',
   },
   title: {
     paddingTop: 20,
@@ -46,7 +46,7 @@ let styles = StyleSheet.create({
   }
 });
 
-const SCREEN_WIDTH = Dimensions.get('window').width;
+const screenWidth = Dimensions.get('window').width;
 
 class Sample extends React.Component {
   state = {
@@ -57,7 +57,7 @@ class Sample extends React.Component {
     return {
       width: (screenWidth - 18) / 2,
       height: parseInt(Math.random() * 20 + 12) * 10,
-      backgroundColor: 'rgb(92, 67, 155)',
+      backgroundColor: '#fff',
       paddingTop: 20,
       borderRadius: 8,
     };
@@ -89,11 +89,11 @@ class Sample extends React.Component {
     return (
       <ScrollView style={styles.container}>
         <View style={styles.title}>
-          <Text onPress={this.onPressTitle} style={styles.titleText}>autoresponsive</Text>
+          <Text onPress={this.onPressTitle} style={styles.titleText}>Feed</Text>
         </View>
-        <AutoResponisve {...this.getAutoResponsiveProps()}>
+        <AutoResponsive {...this.getAutoResponsiveProps()}>
           {this.renderChildren()}
-        </AutoResponisve>
+        </AutoResponsive>
       </ScrollView>
     );
   }
